@@ -16,10 +16,10 @@ public class MecanumDrive {
 
     //This method "init" initializes the motors since they have no value rn
     public void init(HardwareMap hwMap) {
-        frontLeftMotor = hwMap.get(DcMotor.class, "Name inputted into drive station");
-        backLeftMotor = hwMap.get(DcMotor.class, "Name on driver station");
-        frontRightMotor = hwMap.get(DcMotor.class, "Name on driver station");
-        backRightMotor = hwMap.get(DcMotor.class, "Name on Driver Station");
+        frontLeftMotor = hwMap.get(DcMotor.class, "frontLeft");
+        backLeftMotor = hwMap.get(DcMotor.class, "backLeft");
+        frontRightMotor = hwMap.get(DcMotor.class, "frontRight");
+        backRightMotor = hwMap.get(DcMotor.class, "backRight");
 
         // Mecanum drive lowk weird, like the right side is set forward and
         // the left side is reversed in direction so it can move forward & stuff
