@@ -4,21 +4,29 @@ import com.qualcomm.robotcore.eventloop.opmode.OpMode;
 import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
 import com.qualcomm.robotcore.hardware.HardwareMap;
 
+import org.firstinspires.ftc.teamcode.Mechanisms.IntakePerhaps;
 import org.firstinspires.ftc.teamcode.Mechanisms.MecanumDrive;
+import org.firstinspires.ftc.teamcode.Mechanisms.Outtake;
+
+
+
 
 @TeleOp
 public class MainTeleOp extends OpMode {
-
     MecanumDrive myDrive = new MecanumDrive();
-    //Creates an instance of the class we created called MecanumDrive
-
+    Outtake myOuttake = new Outtake();
+    IntakePerhaps myIntake = new IntakePerhaps();
+    //Creates instances of the classes we created called: MecanumDrive, Outtake and IntakePerhaps
     double forward, strafe, rotate;
 
 
     @Override
     public void init() {
         myDrive.init(hardwareMap);
-        // Initialize myDrive with all the hardware mappings it needs
+        myOuttake.init(hardwareMap);
+        myIntake.init(hardwareMap);
+        // Initialize all the motors & set them up w/ hardware Map
+
 
     }
 
@@ -30,7 +38,18 @@ public class MainTeleOp extends OpMode {
 
         myDrive.driveFieldRelative(forward,strafe,rotate);
         // OR for Robot Oriented:
-        myDrive.drive(forward,strafe,rotate);
+        //myDrive.drive(forward,strafe,rotate);
 
+
+        // If button a is pressed, activate the flywheel motor
+        if (gamepad1.a) {
+            myOuttake.driveOuttake(1);
+        }
+
+
+        // If button b is pressed activate the intake
+        if (gamepad1.b) {
+            myIntake.driveIntake(1);
+        }
     }
 }

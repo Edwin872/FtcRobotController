@@ -14,8 +14,9 @@ public class MecanumDrive {
     //Declare motors as a DcMotor "variable type", & imu as IMU type
 
 
-    //This method "init" initializes the motors since they have no value rn
+
     public void init(HardwareMap hwMap) {
+        //This method "init" initializes the motors since they have no value rn
         frontLeftMotor = hwMap.get(DcMotor.class, "Name inputted into drive station");
         backLeftMotor = hwMap.get(DcMotor.class, "Name on driver station");
         frontRightMotor = hwMap.get(DcMotor.class, "Name on driver station");
@@ -90,6 +91,6 @@ public class MecanumDrive {
 
 
         this.drive(newForward, newStrafe, rotate);
-
+        // Calls on the method we defined above this one, which is doable
     }
 }
