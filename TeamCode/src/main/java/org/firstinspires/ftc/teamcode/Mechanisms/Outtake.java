@@ -11,7 +11,7 @@ public class Outtake {
     public void init(HardwareMap hwMap) {
         flywheelMotor = hwMap.get(DcMotor.class, "Whatever the name of motor is");
 
-        flywheelMotor.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
+        flywheelMotor.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
     }
 
 

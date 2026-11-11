@@ -36,9 +36,8 @@ public class MainTeleOp extends OpMode {
         strafe = gamepad1.left_stick_x;
         rotate = gamepad1.right_stick_x;
 
-        myDrive.driveFieldRelative(forward,strafe,rotate);
-        // OR for Robot Oriented:
-        //myDrive.drive(forward,strafe,rotate);
+        myDrive.drive(forward,strafe,rotate);
+        // Using drive & not field oriented drive because we have no encoders
 
 
         // If button a is pressed, activate the flywheel motor

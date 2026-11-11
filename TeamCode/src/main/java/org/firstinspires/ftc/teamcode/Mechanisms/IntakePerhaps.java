@@ -11,7 +11,7 @@ public class IntakePerhaps {
         intakeMotor = hwMap.get(DcMotor.class, "Whatever the name of motor is");
 
 
-        intakeMotor.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
+        intakeMotor.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
     }
 
 
