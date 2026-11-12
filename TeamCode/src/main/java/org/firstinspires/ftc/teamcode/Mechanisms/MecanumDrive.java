@@ -14,12 +14,20 @@ public class MecanumDrive {
     //Declare motors as a DcMotor "variable type", & imu as IMU type
 
 
-    //This method "init" initializes the motors since they have no value rn
+
     public void init(HardwareMap hwMap) {
+<<<<<<< HEAD
         frontLeftMotor = hwMap.get(DcMotor.class, "frontLeft");
         backLeftMotor = hwMap.get(DcMotor.class, "backLeft");
         frontRightMotor = hwMap.get(DcMotor.class, "frontRight");
         backRightMotor = hwMap.get(DcMotor.class, "backRight");
+=======
+        //This method "init" initializes the motors since they have no value rn
+        frontLeftMotor = hwMap.get(DcMotor.class, "Name inputted into drive station");
+        backLeftMotor = hwMap.get(DcMotor.class, "Name on driver station");
+        frontRightMotor = hwMap.get(DcMotor.class, "Name on driver station");
+        backRightMotor = hwMap.get(DcMotor.class, "Name on Driver Station");
+>>>>>>> c4a6c564ae0aaaaa6bc3b0703b087254f967c295
 
         // Mecanum drive lowk weird, like the right side is set forward and
         // the left side is reversed in direction so it can move forward & stuff
@@ -28,10 +36,10 @@ public class MecanumDrive {
 
         // So they run on "encoder mode" (Optional)
         // Could also use RUN_TO_POSITION or some other mode
-        frontLeftMotor.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
-        backLeftMotor.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
-        frontRightMotor.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
-        backRightMotor.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
+        frontLeftMotor.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
+        backLeftMotor.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
+        frontRightMotor.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
+        backRightMotor.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
 
         // Robot Orientated Drive Vs. Field Orientated Drive (for FOD use code below)
         // For FOD use built in IMU on REV hub
@@ -90,6 +98,6 @@ public class MecanumDrive {
 
 
         this.drive(newForward, newStrafe, rotate);
-
+        // Calls on the method we defined above this one, which is doable
     }
 }
